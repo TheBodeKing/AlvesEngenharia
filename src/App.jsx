@@ -1,7 +1,11 @@
-import "./App.css";
+import Navbar from "./components/Navbar";
 
 const App = () => {
-  return <main className="w-[100vw] bg-blue-950">a</main>;
+  return (
+    <main>
+      <Navbar />
+    </main>
+  );
 };
 
 export default App;
