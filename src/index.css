@@ -12,3 +12,15 @@ body {
   background: white;
   user-select: none;
 }
+
+@layer utilities {
+  @media (min-width: 1260px) {
+    .logo-especial {
+      position: absolute;
+      left: 200px;
+    }
+    .teste {
+      color: red;
+    }
+  }
+}
