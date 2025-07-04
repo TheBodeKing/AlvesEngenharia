@@ -1,4 +1,3 @@
-import React from "react";
 import { navLists } from "../constants";
 
 const Navbar = () => {
