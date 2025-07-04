@@ -50,7 +50,7 @@ const Inicio = () => {
   };
 
   return (
-    <section id="inicio" className="w-full h-[160vh]">
+    <section id="inicio" className="w-full h-[180vh]">
       <div className="w-full h-[100vh]">
         <div className="w-full relative h-[100vh] justify-center flex">
           <button onClick={handleClick}>
@@ -112,20 +112,20 @@ const Inicio = () => {
           </div>
         </div>
       </div>
-      <div className="border border-black flex py-10 px-20 w-full h-[60vh] flex-col items-center justify-between">
+      <div className="border border-black flex py-10 px-20 w-full h-[80vh] flex-col items-center justify-between">
         <div className="flex flex-1 w-[630px] text-2xl font-bold text-justify">
           <h2>{phc}</h2>
         </div>
-        <div className="flex relative flex-row w-full px-30 text-2xl font-bold items-center justify-between">
-          <div className="flex flex-col items-center p-5">
+        <div className="flex relative flex-row w-full mt-20 px-30 text-2xl font-bold items-center justify-between">
+          <div className="flex flex-col items-center p-5 gap-5">
             <img src={pontoImg} alt="Localização" width={60} height={90} />
             <p>Perto de você</p>
           </div>
-          <div className="flex flex-col items-center p-5">
+          <div className="flex flex-col items-center p-5 gap-5">
             <img src={estrelaImg} alt="Qualidade" width={60} height={90} />
             <p>Qualidade garantida</p>
           </div>
-          <div className="flex flex-col items-center p-5">
+          <div className="flex flex-col items-center p-5 gap-5">
             <img src={dinheiroImg} alt="Preço" width={60} height={90} />
             <p>Preço acessível</p>
           </div>
