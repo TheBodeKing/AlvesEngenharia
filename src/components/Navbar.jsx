@@ -1,19 +1,20 @@
 import { navLists } from "../constants";
 
-const Navbar = () => {
+const Navbar = ({ onSelect, active }) => {
   return (
     <nav
       className="w-full py-7 px-10 sm:flex hidden 
     justify-between items-center relative"
     >
       <div className="flex flex-1 justify-center gap-20">
-        {navLists.map((item) => (
+        {navLists.map(({ nome, id }) => (
           <div
-            key={item}
+            key={id}
+            onClick={() => onSelect(id)}
             className="inline-block px-4 py-2 cursor-pointer text-xl sm:text-2xl hover:text-white
              hover:bg-black rounded-xl transition-al"
           >
-            {item}
+            {nome}
           </div>
         ))}
       </div>
