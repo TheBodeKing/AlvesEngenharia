@@ -16,10 +16,10 @@ const header = () => {
            logo-especial sm:w-[150px] sm:h-[150px] "
         />
         <div className="flex flex-col items-center mx-5">
-          <h1 className="text-5xl sm:text-7xl font-bold whitespace-nowrap">
+          <h1 className="text-5xl sm:text-7xl roboto-grosso">
             Alves Engenharia
           </h1>
-          <h2 className="text-xl sm:text-2xl mt-5">
+          <h2 className="text-xl sm:text-2xl mt-5 roboto-fino">
             Soluções em engenharia elétrica
           </h2>
         </div>

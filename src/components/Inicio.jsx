@@ -112,11 +112,11 @@ const Inicio = () => {
           </div>
         </div>
       </div>
-      <div className="border border-black flex py-10 px-20 w-full h-[80vh] flex-col items-center justify-between">
-        <div className="flex flex-1 w-[630px] text-2xl font-bold text-justify">
+      <div className=" flex py-15 px-20 w-full h-[80vh] flex-col items-center justify-between">
+        <div className="flex  w-[630px] text-2xl font-bold text-justify">
           <h2>{phc}</h2>
         </div>
-        <div className="flex relative flex-row w-full mt-20 px-30 text-2xl font-bold items-center justify-between">
+        <div className="flex relative flex-row w-full libertinus-mono-regular mb-15 px-30 text-xl items-center justify-between">
           <div className="flex flex-col items-center p-5 gap-5">
             <img src={pontoImg} alt="Localização" width={60} height={90} />
             <p>Perto de você</p>

@@ -1,13 +1,19 @@
 const Contato = () => {
   return (
     <section id="contato" className="w-full h-[100vh]">
-      <div className="py-15 px-5 w-full flex flex-col">
+      <div className="py-15 px-5 w-full items-center justify-between   flex flex-col">
         <h2 className="text-3xl text-center mb-10">Entre em Contato</h2>
-        <div className="flex flex-col reltaive w-[80%] border  border-black">
-          <div>
-            <h2>Telefone</h2>
+        <div className="flex flex-row reltaive w-[60%]  items-center justify-between ">
+          <div className="flex flex-1 flex-col w-full items-end justify-center">
+            <div className="p-10 mb-10 ml-5">
+              <h2 className="text-blue-500">Telefone</h2>
+              <p>213412421</p>
+
+              <h2 className="mt-5 text-blue-500">Email</h2>
+              <p>alexandre@hotmail.com</p>
+            </div>
           </div>
-          <form className="max-w-xl mx-auto flex flex-col gap-2 text-sm w-[100%]">
+          <form className="max-w-xl mx-auto flex flex-[2] flex-col gap-2 text-sm  w-full ">
             <div className="flex flex-col">
               <input
                 type="text"

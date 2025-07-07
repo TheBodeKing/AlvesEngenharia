@@ -4,7 +4,7 @@ const Navbar = ({ onSelect, active }) => {
   return (
     <nav
       className="w-full py-7 px-10 sm:flex hidden 
-    justify-between items-center relative"
+    justify-between items-center relative special-gothic-expanded-one-regular "
     >
       <div className="flex flex-1 justify-center gap-20">
         {navLists.map(({ nome, id }) => (
