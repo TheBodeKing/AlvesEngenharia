@@ -11,7 +11,7 @@ import { phc } from "../constants";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 
-const Inicio = () => {
+const Inicio = ({ forRef }) => {
   const divSobre = useRef();
   const divServico = useRef();
   const [mostrarProxima, setMostrarProxima] = useState(false);
@@ -50,7 +50,13 @@ const Inicio = () => {
   };
 
   return (
-    <section id="inicio" className="w-full h-[180vh]">
+    <section
+      id="inicio"
+      className="w-full h-[180vh] "
+      ref={(el) => {
+        forRef.current["inicio"] = el;
+      }}
+    >
       <div className="w-full h-[100vh]">
         <div className="w-full relative h-[100vh] justify-center flex">
           <button onClick={handleClick}>
@@ -116,7 +122,7 @@ const Inicio = () => {
         <div className="flex  w-[630px] text-2xl font-bold text-justify">
           <h2>{phc}</h2>
         </div>
-        <div className="flex relative flex-row w-full libertinus-mono-regular mb-15 px-30 text-xl items-center justify-between">
+        <div className="flex relative flex-row w-full libertinus-mono-regular px-30 text-xl items-center justify-between">
           <div className="flex flex-col items-center p-5 gap-5">
             <img src={pontoImg} alt="Localização" width={60} height={90} />
             <p>Perto de você</p>

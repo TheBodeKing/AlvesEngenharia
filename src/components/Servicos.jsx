@@ -7,9 +7,15 @@ import {
   servico5Img,
 } from "../utils";
 
-const Servicos = () => {
+const Servicos = ({ forRef }) => {
   return (
-    <section id="servico" className="w-full h-[150vh] border border-blue-400">
+    <section
+      id="servico"
+      className="w-full h-[150vh] hidden"
+      ref={(el) => {
+        forRef.current["servico"] = el;
+      }}
+    >
       <div className="flex flex-col items-center justify-between p-15">
         <h1 className="text-5xl">O melhor serviço da área</h1>
         <h2 className="text-3xl mt-5">{pht}</h2>

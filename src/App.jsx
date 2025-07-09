@@ -4,33 +4,24 @@ import Navbar from "./components/Navbar";
 import Servicos from "./components/Servicos";
 import Sobre from "./components/Sobre";
 import Contato from "./components/Contato";
-import { useState } from "react";
+import { useRef } from "react";
 import Rodape from "./components/Rodape";
-import AnimatedSection from "./components/AnimatedSection";
 
 const App = () => {
-  const [ativo, setAtivo] = useState("inicio");
+  const appRef = useRef({});
 
   return (
-    <main className="relative overflow-hidden h-[100vh]">
+    <main>
       <Header />
-      <Navbar onSelect={setAtivo} active={ativo} />
+      <Navbar targRef={appRef} />
 
-      <AnimatedSection show={ativo === "inicio"}>
-        <Inicio />
-      </AnimatedSection>
+      <Inicio forRef={appRef} />
 
-      <AnimatedSection show={ativo === "servico"}>
-        <Servicos />
-      </AnimatedSection>
+      <Servicos forRef={appRef} />
 
-      <AnimatedSection show={ativo === "sobre"}>
-        <Sobre />
-      </AnimatedSection>
+      <Sobre forRef={appRef} />
 
-      <AnimatedSection show={ativo === "contato"}>
-        <Contato />
-      </AnimatedSection>
+      <Contato forRef={appRef} />
 
       <Rodape />
     </main>

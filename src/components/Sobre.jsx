@@ -1,10 +1,17 @@
 import { phc } from "../constants";
 import { sobreImg } from "../utils";
 
-const Sobre = () => {
+const Sobre = ({ forRef }) => {
   return (
-    <section id="sobre" className="w-full h-[80%]">
-      <div className="flex items-center justify-center">
+    <section
+      id="sobre"
+      className="w-full h-[80%] hidden"
+      ref={(el) => {
+        forRef.current["sobre"] = el;
+      }}
+    >
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="text-2xl font-bold">Sobre nós</h1>
         <div className="flex relative w-[80%] flex-row p-20 justify-between items-center">
           <div className="flex flex-col gap-8 w-[60%]">
             <p>{phc}</p>

@@ -1,6 +1,12 @@
-const Contato = () => {
+const Contato = ({ forRef }) => {
   return (
-    <section id="contato" className="w-full h-[100vh]">
+    <section
+      id="contato"
+      className="w-full h-[80vh] hidden"
+      ref={(el) => {
+        forRef.current["contato"] = el;
+      }}
+    >
       <div className="py-15 px-5 w-full items-center justify-between   flex flex-col">
         <h2 className="text-3xl text-center mb-10">Entre em Contato</h2>
         <div className="flex flex-row reltaive w-[60%]  items-center justify-between ">
