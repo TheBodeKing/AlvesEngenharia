@@ -52,7 +52,7 @@ const Inicio = ({ forRef }) => {
   return (
     <section
       id="inicio"
-      className="w-full h-[180vh] "
+      className="w-full h-[180vh] hidden"
       ref={(el) => {
         forRef.current["inicio"] = el;
       }}

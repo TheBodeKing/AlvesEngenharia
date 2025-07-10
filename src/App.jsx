@@ -14,15 +14,15 @@ const App = () => {
     <main>
       <Header />
       <Navbar targRef={appRef} />
+      <div className="w-full h-auto relative ">
+        <Inicio forRef={appRef} />
 
-      <Inicio forRef={appRef} />
+        <Servicos forRef={appRef} />
 
-      <Servicos forRef={appRef} />
+        <Sobre forRef={appRef} />
 
-      <Sobre forRef={appRef} />
-
-      <Contato forRef={appRef} />
-
+        <Contato forRef={appRef} />
+      </div>
       <Rodape />
     </main>
   );

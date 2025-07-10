@@ -1,40 +1,41 @@
-/* eslint-disable no-unused-vars */
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { navLists } from "../constants";
-import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 
 const Navbar = ({ targRef }) => {
   const [ativo, setAtivo] = useState();
   const anteriorRef = useRef(null);
 
-  useGSAP(() => {
+  useEffect(() => {
     const antes = anteriorRef.current;
-    console.log(antes);
+    const proximo = targRef.current[ativo];
 
-    if (antes === undefined) {
-      anteriorRef.current = targRef.current["inicio"];
-      gsap.to(anteriorRef.current, {
-        display: "none",
-      });
-      console.log("primeira funçaõ");
+    if (!antes && ativo === "inicio") {
+      anteriorRef.current = proximo;
+      gsap.set(anteriorRef.current, { display: "block", opacity: 1, x: 0 });
+      return;
     }
 
-    if (antes && targRef.current[ativo]) {
+    if (antes && proximo && proximo !== antes) {
+      // Animate old one out
       gsap.to(antes, {
-        display: "none",
+        x: "-100%",
+        opacity: 0,
+        duration: 0.8,
+        onComplete: () => {
+          gsap.set(antes, { display: "none", x: 0 }); // Reset position for reuse
+          // After old is gone, animate new one in
+          gsap.set(proximo, { display: "block", x: "100%", opacity: 0 });
+          gsap.to(proximo, {
+            x: 0,
+            opacity: 1,
+            duration: 0.8,
+          });
+        },
       });
-      console.log("segunda funcao");
     }
 
-    if (ativo && antes !== targRef.current[ativo] && targRef.current[ativo]) {
-      gsap.to(targRef.current[ativo], {
-        display: "block",
-      });
-      console.log("terceira");
-    }
-
-    anteriorRef.current = targRef.current[ativo];
+    anteriorRef.current = proximo;
   }, [ativo]);
 
   return (
