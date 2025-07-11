@@ -3,7 +3,7 @@ import { navLists } from "../constants";
 import { gsap } from "gsap";
 
 const Navbar = ({ targRef }) => {
-  const [ativo, setAtivo] = useState();
+  const [ativo, setAtivo] = useState("inicio");
   const anteriorRef = useRef(null);
 
   useEffect(() => {
@@ -31,6 +31,7 @@ const Navbar = ({ targRef }) => {
         left: 0,
         x: "-100%",
         opacity: 0,
+        ease: "power3.out",
         onComplete: () => {
           gsap.set(antes, { display: "none", x: 0, position: "static" });
         },
@@ -43,6 +44,7 @@ const Navbar = ({ targRef }) => {
           x: 0,
           opacity: 1,
           duration: 1,
+          ease: "power3.out",
         }
       );
     }
@@ -61,8 +63,10 @@ const Navbar = ({ targRef }) => {
         {navLists.map(({ nome, id }) => (
           <div
             key={id}
-            className="inline-block px-4 py-2 cursor-pointer text-xl sm:text-2xl hover:text-white
-             hover:bg-black rounded-xl transition-al"
+            className={`inline-block px-4 py-2 cursor-pointer text-xl sm:text-2xl hover:text-white
+             hover:bg-gray-900 rounded-xl transition-all ${
+               id === ativo ? "bg-black text-white" : ""
+             }`}
             onClick={() => {
               setAtivo(id);
             }}
