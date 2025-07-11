@@ -14,7 +14,7 @@ const App = () => {
     <main>
       <Header />
       <Navbar targRef={appRef} />
-      <div className="w-full h-auto relative ">
+      <div className="w-full h-auto relative overflow-hidden">
         <Inicio forRef={appRef} />
 
         <Servicos forRef={appRef} />

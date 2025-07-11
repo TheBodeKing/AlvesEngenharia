@@ -10,32 +10,46 @@ const Navbar = ({ targRef }) => {
     const antes = anteriorRef.current;
     const proximo = targRef.current[ativo];
 
-    if (!antes && ativo === "inicio") {
-      anteriorRef.current = proximo;
-      gsap.set(anteriorRef.current, { display: "block", opacity: 1, x: 0 });
+    if (!antes) {
+      anteriorRef.current = targRef.current["inicio"];
+      Object.values(targRef.current).forEach((el) => {
+        if (el && el !== targRef.current["inicio"]) {
+          gsap.set(el, { display: "none", opacity: 0 });
+        }
+      });
       return;
     }
 
-    if (antes && proximo && proximo !== antes) {
-      // Animate old one out
+    if (antes && ativo && antes !== proximo) {
+      gsap.set(antes, {
+        position: "absolute",
+        top: 0,
+        left: 0,
+      });
       gsap.to(antes, {
+        top: 0,
+        left: 0,
         x: "-100%",
         opacity: 0,
-        duration: 0.8,
         onComplete: () => {
-          gsap.set(antes, { display: "none", x: 0 }); // Reset position for reuse
-          // After old is gone, animate new one in
-          gsap.set(proximo, { display: "block", x: "100%", opacity: 0 });
-          gsap.to(proximo, {
-            x: 0,
-            opacity: 1,
-            duration: 0.8,
-          });
+          gsap.set(antes, { display: "none", x: 0, position: "static" });
         },
       });
+      gsap.set(proximo, { display: "block", x: "100%" });
+      gsap.to(
+        proximo,
+
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+        }
+      );
     }
 
-    anteriorRef.current = proximo;
+    if (ativo) {
+      anteriorRef.current = targRef.current[ativo];
+    }
   }, [ativo]);
 
   return (

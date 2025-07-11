@@ -11,7 +11,7 @@ const Servicos = ({ forRef }) => {
   return (
     <section
       id="servico"
-      className="w-full h-[150vh] hidden"
+      className="w-full h-[150vh]"
       ref={(el) => {
         forRef.current["servico"] = el;
       }}

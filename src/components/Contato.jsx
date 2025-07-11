@@ -2,7 +2,7 @@ const Contato = ({ forRef }) => {
   return (
     <section
       id="contato"
-      className="w-full h-[80vh] hidden"
+      className="w-full h-[80vh]"
       ref={(el) => {
         forRef.current["contato"] = el;
       }}
