@@ -1,4 +1,41 @@
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
 const Contato = ({ forRef }) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const serviceId = "service_t4wd918";
+    const templateId = "template_qc1oagq";
+    const publicKey = "ELn8d2ZCUv1FB2i0s";
+
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      from_number: number,
+      to_name: "pompeu",
+      message: message,
+    };
+
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        alert("Email enviado com sucesso!");
+        setName("");
+        setEmail("");
+        setMessage("");
+        setNumber("");
+      })
+      .catch((error) => {
+        alert("Falha no envio!");
+      });
+  };
+
   return (
     <section
       id="contato"
@@ -19,12 +56,17 @@ const Contato = ({ forRef }) => {
               <p>alexandre@hotmail.com</p>
             </div>
           </div>
-          <form className="max-w-xl mx-auto flex flex-[2] flex-col gap-2 text-sm  w-full ">
+          <form
+            className="max-w-xl mx-auto flex flex-[2] flex-col gap-2 text-sm w-full"
+            onSubmit={handleSubmit}
+          >
             <div className="flex flex-col">
               <input
                 type="text"
                 id="nome"
                 name="nome"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 required
                 placeholder="Nome *"
                 className="p-2 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300"
@@ -38,6 +80,8 @@ const Contato = ({ forRef }) => {
                 name="email"
                 required
                 placeholder="Email *"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="p-2 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300"
               />
             </div>
@@ -48,6 +92,8 @@ const Contato = ({ forRef }) => {
                 id="telefone"
                 name="telefone"
                 placeholder="Telefone"
+                value={number}
+                onChange={(e) => setNumber(e.target.value)}
                 className="p-2 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300"
               />
             </div>
@@ -58,6 +104,8 @@ const Contato = ({ forRef }) => {
                 name="mensagem"
                 rows="5"
                 required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 placeholder="Mensagem *"
                 className="p-2 border border-gray-200 resize-none focus:outline-none focus:ring-2 focus:ring-gray-300"
               ></textarea>
