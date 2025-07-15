@@ -5,6 +5,27 @@ import { gsap } from "gsap";
 const Navbar = ({ targRef }) => {
   const [ativo, setAtivo] = useState("inicio");
   const anteriorRef = useRef(null);
+  const [btn, setBtn] = useState(false);
+  const navRef = useRef();
+
+  useEffect(() => {
+    console.log("use effect tá rodando");
+    if (window.innerWidth < 640) {
+      navRef.current.classList.remove("nav-pc");
+      navRef.current.classList.add("hidden");
+    } else {
+      navRef.current.classList.remove("hidden");
+      navRef.current.classList.add("nav-pc");
+    }
+
+    if (btn) {
+      navRef.current.classList.remove("hidden");
+      navRef.current.classList.add("nav-mobile");
+    } else {
+      navRef.current.classList.add("hidden");
+      navRef.current.classList.remove("nav-mobile");
+    }
+  }, [btn]);
 
   useEffect(() => {
     const antes = anteriorRef.current;
@@ -55,11 +76,20 @@ const Navbar = ({ targRef }) => {
   }, [ativo]);
 
   return (
-    <nav
-      className="w-full py-7 px-10 sm:flex hidden 
-    justify-between items-center relative special-gothic-expanded-one-regular "
-    >
-      <div className="flex flex-1 justify-center gap-20">
+    <div>
+      <button
+        className="fixed top-4 right-4 sm:hidden z-30 
+             flex items-center justify-center 
+             w-8 h-8 rounded-xl
+             bg-white text-black text-xl 
+             shadow-md hover:bg-gray-100 transition-all duration-300"
+        onClick={() => {
+          !btn ? setBtn(true) : setBtn(false);
+        }}
+      >
+        {!btn ? "☰" : "X"}
+      </button>
+      <nav ref={navRef}>
         {navLists.map(({ nome, id }) => (
           <div
             key={id}
@@ -69,13 +99,16 @@ const Navbar = ({ targRef }) => {
              }`}
             onClick={() => {
               setAtivo(id);
+              if (window.innerWidth < 640) {
+                setBtn(false);
+              }
             }}
           >
             {nome}
           </div>
         ))}
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 
