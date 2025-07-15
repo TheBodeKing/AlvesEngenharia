@@ -51,35 +51,37 @@ const Inicio = ({ forRef }) => {
   return (
     <section
       id="inicio"
-      className="w-full h-[140vh] sm:h-[180vh]"
+      className="w-full h-[200vh] sm:h-[180vh]"
       ref={(el) => {
         forRef.current["inicio"] = el;
       }}
     >
-      <div className="w-full h-[60vh] sm:h-[100vh]">
-        <div className="w-full relative h-[60vh] sm:h-[100vh] justify-center  flex">
+      <div className="w-full h-[90vh] sm:h-[100vh]">
+        <div className="w-full relative h-[90vh] sm:h-[100vh] justify-center  flex">
           <button
             onClick={handleClick}
             className="bg-gray-200 p-2 z-20
-          absolute top-1/2 -translate-y-1/2 left-3 sm:left-10 rounded-full "
+          absolute top-1/2 -translate-y-1/2 left-3 sm:left-10 rounded-full cursor-pointer
+          hover:scale-110 hover:bg-gray-300 hover:shadow transition-all"
           >
             <img
               src={setaLImg}
               alt="Seta"
               className=" w-[20px]
-               sm:w-[60-px] h-[20px] sm:h-[60px] cursor-pointer"
+               sm:w-[50px] h-[20px] sm:h-[50px] "
             />
           </button>
           <button
             onClick={handleClick}
             className="bg-gray-200 p-2 z-20
-          absolute top-1/2 -translate-y-1/2 right-3 sm:right-10  rounded-full "
+          absolute top-1/2 -translate-y-1/2 right-3 sm:right-10  rounded-full  cursor-pointer
+          hover:scale-110 hover:bg-gray-300 hover:shadow transition-all"
           >
             <img
               src={setaRImg}
               alt="Seta"
               className=" w-[20px]
-               sm:w-[60-px] h-[20px] sm:h-[60px] cursor-pointer"
+               sm:w-[50px] h-[20px] sm:h-[50px] "
             />
           </button>
           <div
@@ -141,7 +143,7 @@ const Inicio = ({ forRef }) => {
         </div>
       </div>
       <div
-        className="flex py-5 sm:py-15 px-5 sm:px-20 w-full h-[80vh]
+        className="flex py-5 sm:py-15 px-5 sm:px-20 w-full h-[110vh] sm:h-[80vh]
        flex-col items-center justify-between"
       >
         <div className="flex w-[320px] sm:w-[630px] text-xl sm:text-2xl font-bold text-justify">
