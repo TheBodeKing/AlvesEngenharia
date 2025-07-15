@@ -52,6 +52,7 @@ const Navbar = ({ targRef }) => {
         left: 0,
         x: "-100%",
         opacity: 0,
+        duration: 1,
         ease: "power3.out",
         onComplete: () => {
           gsap.set(antes, { display: "none", x: 0, position: "static" });
@@ -78,14 +79,13 @@ const Navbar = ({ targRef }) => {
   return (
     <div>
       <button
+        aria-label="Menu"
         className="fixed top-4 right-4 sm:hidden z-30 
              flex items-center justify-center 
              w-8 h-8 rounded-xl
              bg-white text-black text-xl 
              shadow-md hover:bg-gray-100 transition-all duration-300"
-        onClick={() => {
-          !btn ? setBtn(true) : setBtn(false);
-        }}
+        onClick={() => setBtn((prev) => !prev)}
       >
         {!btn ? "☰" : "X"}
       </button>

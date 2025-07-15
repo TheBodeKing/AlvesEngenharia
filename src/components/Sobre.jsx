@@ -5,7 +5,7 @@ const Sobre = ({ forRef }) => {
   return (
     <section
       id="sobre"
-      className="w-full h-full sm:h-[80%] "
+      className="w-full min-h-screen "
       ref={(el) => {
         forRef.current["sobre"] = el;
       }}

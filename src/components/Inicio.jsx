@@ -9,14 +9,12 @@ import {
 } from "../utils";
 import { phc } from "../constants";
 import gsap from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const Inicio = ({ forRef }) => {
   const divSobre = useRef();
   const divServico = useRef();
   const [mostrarProxima, setMostrarProxima] = useState(false);
-
-  useEffect;
 
   const handleClick = () => {
     if (!mostrarProxima) {
@@ -51,14 +49,15 @@ const Inicio = ({ forRef }) => {
   return (
     <section
       id="inicio"
-      className="w-full h-[200vh] sm:h-[180vh]"
+      className="w-full min-h-screen"
       ref={(el) => {
         forRef.current["inicio"] = el;
       }}
     >
-      <div className="w-full h-[90vh] sm:h-[100vh]">
+      <div className="w-full min-h-screen">
         <div className="w-full relative h-[90vh] sm:h-[100vh] justify-center  flex">
           <button
+            aria-label="Mostrar próximo conteúdo"
             onClick={handleClick}
             className="bg-gray-200 p-2 z-20
           absolute top-1/2 -translate-y-1/2 left-3 sm:left-10 rounded-full cursor-pointer
@@ -66,12 +65,13 @@ const Inicio = ({ forRef }) => {
           >
             <img
               src={setaLImg}
-              alt="Seta"
+              alt="Seta para navegar entre seções"
               className=" w-[20px]
                sm:w-[50px] h-[20px] sm:h-[50px] "
             />
           </button>
           <button
+            aria-label="Mostrar próximo conteúdo"
             onClick={handleClick}
             className="bg-gray-200 p-2 z-20
           absolute top-1/2 -translate-y-1/2 right-3 sm:right-10  rounded-full  cursor-pointer
@@ -79,7 +79,7 @@ const Inicio = ({ forRef }) => {
           >
             <img
               src={setaRImg}
-              alt="Seta"
+              alt="Seta para navegar entre seções"
               className=" w-[20px]
                sm:w-[50px] h-[20px] sm:h-[50px] "
             />

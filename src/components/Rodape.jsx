@@ -1,6 +1,6 @@
 const Rodape = () => {
   return (
-    <footer className="w-full h-[16vh] sm:h-[24vh] select-text">
+    <footer className="w-full min-h-[16vh] select-text">
       <div
         className="flex flex-col h-full relative justify-between 
       items-center border-t-4 border-gray-600"

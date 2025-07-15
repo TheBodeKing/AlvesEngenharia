@@ -39,7 +39,7 @@ const Contato = ({ forRef }) => {
   return (
     <section
       id="contato"
-      className="w-full h-[80vh]"
+      className="w-full min-h-screen"
       ref={(el) => {
         forRef.current["contato"] = el;
       }}
@@ -49,7 +49,7 @@ const Contato = ({ forRef }) => {
           Entre em Contato
         </h2>
         <div
-          className="flex flex-col sm:flex-row reltaive w-full sm:w-[60%] 
+          className="flex flex-col sm:flex-row relative w-full sm:w-[60%] 
          items-center justify-between "
         >
           <div className="flex flex-1 flex-col w-full items-start sm:items-end justify-center">
