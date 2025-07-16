@@ -9,15 +9,6 @@ import Rodape from "./components/Rodape";
 
 const App = () => {
   const appRef = useRef({});
-  return (
-    <button
-      onClick={() => {
-        throw new Error("This is your first error!");
-      }}
-    >
-      Break the world
-    </button>
-  );
 
   return (
     <main>
