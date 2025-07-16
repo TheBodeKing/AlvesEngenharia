@@ -12,7 +12,7 @@ const Contato = ({ forRef }) => {
 
     const serviceId = "service_t4wd918";
     const templateId = "template_qc1oagq";
-    const publicKey = "ELn8d2ZCUv1FB2i0s";
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     const templateParams = {
       from_name: name,
@@ -45,7 +45,12 @@ const Contato = ({ forRef }) => {
       }}
     >
       <div className="sm:py-15 py-5 px-5 w-full items-center justify-between flex flex-col">
-        <h2 className="text-2xl sm:text-5xl text-center mb-10">
+        <h2
+          className="text-2xl sm:text-5xl text-center mb-10"
+          onClick={() => {
+            console.log(publicKey);
+          }}
+        >
           Entre em Contato
         </h2>
         <div
