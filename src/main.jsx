@@ -1,14 +1,20 @@
+import * as Sentry from "@sentry/react";
+import { getSentryDSN } from "./utils/config.js";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
-import * as Sentry from "@sentry/react";
 
 Sentry.init({
-  dsn: "https://98f92c58677659c0cfedf6ed5d24c4ab@o4509675143299072.ingest.us.sentry.io/4509675159617536",
+  dsn: getSentryDSN(),
   // Setting this option to true will send default PII data to Sentry.
   // For example, automatic IP address collection on events
+
   sendDefaultPii: true,
+  integrations: [Sentry.replayIntegration()],
+  // Session Replay
+  replaysSessionSampleRate: 0.1,
+  replaysOnErrorSampleRate: 1.0,
 });
 
 createRoot(document.getElementById("root")).render(

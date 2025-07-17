@@ -1,3 +1,4 @@
+import { getEmailJsKey } from "../utils/config";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -12,7 +13,7 @@ const Contato = ({ forRef }) => {
 
     const serviceId = "service_t4wd918";
     const templateId = "template_qc1oagq";
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    const publicKey = getEmailJsKey();
 
     const templateParams = {
       from_name: name,
