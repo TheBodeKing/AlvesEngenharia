@@ -6,8 +6,9 @@ const Header = () => {
       <img
         src={fundoImgHd}
         alt="Imagem de fundo de cabeçalho"
-        className="absolute top-0 left-0 h-[260px] sm:h-[210px] z-0 w-full"
+        className="absolute top-0 left-0 h-[260px] sm:h-[210px] z-0 w-full sm:object-cover"
       />
+      <div className="absolute inset-0 bg-white/60" />
       <div
         className="flex flex-col sm:flex-row w-full py-5 px-5
        items-center justify-center relative z-10"
@@ -22,7 +23,7 @@ const Header = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl roboto-grosso">
             Alves Engenharia
           </h1>
-          <h2 className="text-xl sm:text-2xl mt-4 roboto-fino">
+          <h2 className="text-xl sm:text-2xl mt-4 rubik-mr">
             Soluções em engenharia elétrica
           </h2>
         </div>

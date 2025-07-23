@@ -93,8 +93,8 @@ const Navbar = ({ targRef }) => {
         {navLists.map(({ nome, id }) => (
           <div
             key={id}
-            className={`inline-block px-4 py-2 cursor-pointer text-xl sm:text-2xl hover:text-white
-             hover:bg-gray-900 rounded-xl transition-all ${
+            className={`inline-block px-4 py-2 sm:mx-5 cursor-pointer text-xl sm:text-2xl hover:text-white
+             hover:bg-gray-900 rounded-xl transition-all roboto-grosso-maior ${
                id === ativo ? "bg-black text-white" : ""
              }`}
             onClick={() => {

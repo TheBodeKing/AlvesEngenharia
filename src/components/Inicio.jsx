@@ -7,7 +7,6 @@ import {
   setaLImg,
   setaRImg,
 } from "../utils";
-import { phc } from "../constants";
 import gsap from "gsap";
 import { useRef, useState } from "react";
 
@@ -94,15 +93,20 @@ const Inicio = ({ forRef }) => {
               alt="Imagem de fundo"
               className="absolute top-0 left-0 w-full h-full object-cover z-0"
             />
-            <h2 className="font-bold text-4xl sm:text-6xl relative mt-10 ml-5 sm:ml-10 sm:mb-20 ">
+            <div className="inset-0 absolute bg-white/60" />
+            <h2 className="font-bold text-4xl sm:text-6xl relative mt-10 ml-5 sm:ml-10 sm:mb-20 roboto-grosso">
               Serviços
             </h2>
-            <p className=" relative w-[280px] sm:w-[620px] ml-11 bottom-10 sm:ml-10 text-xl sm:text-3xl text-justify">
-              {phc}
+            <p className="rubik-mr relative w-[280px] sm:w-[620px] ml-11 bottom-10 sm:ml-10 text-xl sm:text-3xl text-justify">
+              Prestamos serviços de instalação, planejamento e desenvolvimento
+              de sistemas elétricos de prédios, casas, fábricas e variados tipos
+              de estruturas. Supervisionamos a instalação de sistemas conforme
+              as normas de segurança e qualidade. Manutenção, diagnóstico e
+              solução de problemas envolvendo sistemas elétricos.
             </p>
             <a
               className="rounded-full relative w-fit px-4 py-2 ml-5 bottom-10 sm:ml-10 mb-10 sm:mt-25
-               bg-black text-white text-xl
+               bg-black text-white text-xl rubik-mr
             hover:text-black hover:bg-white transition-all z-20 
             cursor-pointer hover:scale-110"
             >
@@ -120,21 +124,22 @@ const Inicio = ({ forRef }) => {
               alt="Imagem de fundo"
               className="absolute top-0 left-0 w-full h-full object-cover z-0"
             />
-            <h2 className="font-bold text-5xl sm:text-6xl relative mb-10 sm:mb-15 ">
+            <div className="inset-0 absolute bg-white/60" />
+            <h2 className="text-5xl sm:text-6xl relative mb-10 sm:mb-15 roboto-grosso ">
               Sobre
             </h2>
             <ul
-              className=" list-disc relative w-[280px] sm:w-[620px] ml-20 sm:ml-30 
-            text-2xl sm:text-3xl text-justify"
+              className=" list-disc flex flex-col relative w-[280px] sm:w-[620px] ml-20 sm:ml-30 
+            text-2xl sm:text-3xl text-justify rubik-mr gap-4"
             >
-              <li>Ponto 1</li>
-              <li>Ponto 2</li>
-              <li>Ponto 3</li>
-              <li>Ponto 4</li>
+              <li>10 anos de experiência na área</li>
+              <li>Licenciado e certificado, registrado no CREA</li>
+              <li>Compromissado, confiável, transparente e detalhista</li>
+              <li>Disponibilidade para viajar e consultorias remotas</li>
             </ul>
             <a
               className="rounded-full relative w-fit px-4 py-2 ml-5 sm:ml-25 
-              mt-10 sm:mt-20 bg-black text-white text-xl
+              mt-10 sm:mt-20 bg-black text-white text-xl rubik-mr
             hover:text-black hover:bg-white transition-all z-20 cursor-pointer hover:scale-110"
             >
               Veja mais sobre nós
@@ -146,8 +151,12 @@ const Inicio = ({ forRef }) => {
         className="flex py-5 sm:py-15 px-5 sm:px-20 w-full h-[110vh] sm:h-[80vh]
        flex-col items-center justify-between"
       >
-        <div className="flex w-[320px] sm:w-[630px] text-xl sm:text-2xl font-bold text-justify">
-          <h2>{phc}</h2>
+        <div className="flex w-[320px] sm:w-[630px] text-xl sm:text-2xl rubik-mr font-bold text-justify">
+          <h2>
+            Dando vida a soluções elétricas inteligentes e confiáveis. Com foco
+            em segurança, eficiência e inovação, oferecemos serviços de alta
+            qualidade adaptados às necessidades do projeto à execução.
+          </h2>
         </div>
         <div
           className="flex relative flex-col sm:flex-row w-full libertinus-mono-regular
