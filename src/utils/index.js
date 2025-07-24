@@ -7,12 +7,12 @@ import setaL from "/assets/images/setaL.png";
 import estrela from "/assets/images/star.jpeg";
 import ponto from "/assets/images/pin.png";
 import dinheiro from "/assets/images/dindin.jpg";
-import servico1 from "/assets/images/servico1.png";
-import servico2 from "/assets/images/servico2.png";
-import servico3 from "/assets/images/servico3.png";
-import servico4 from "/assets/images/servico4.png";
-import servico5 from "/assets/images/servico5.png";
-import sobre from "/assets/images/sobre.png";
+import servico1 from "/assets/images/soham-banerjee-SAFF_1rWBqE-unsplash.jpg";
+import servico2 from "/assets/images/gerente.jpg";
+import servico3 from "/assets/images/markus-spiske-kK7uPfb2YWU-unsplash.jpg";
+import servico4 from "/assets/images/xin-Q5hVR77WgZg-unsplash.jpg";
+import servico5 from "/assets/images/hobi-industri-NLBJ2I0lNr4-unsplash.jpg";
+import sobre from "/assets/images/pexels-pixabay-236089.jpg";
 
 export const logoImg = logo;
 export const fundoImgHd = fundoHd;
