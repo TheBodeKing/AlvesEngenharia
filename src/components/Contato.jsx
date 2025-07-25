@@ -33,6 +33,7 @@ const Contato = ({ forRef }) => {
         setNumber("");
       })
       .catch((error) => {
+        console.error(error);
         alert("Falha no envio!");
       });
   };
