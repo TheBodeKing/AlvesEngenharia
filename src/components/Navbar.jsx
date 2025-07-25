@@ -7,9 +7,9 @@ const Navbar = ({ targRef }) => {
   const anteriorRef = useRef(null);
   const [btn, setBtn] = useState(false);
   const navRef = useRef();
+  const isAnimating = useRef(false);
 
   useEffect(() => {
-    console.log("use effect tá rodando");
     if (window.innerWidth < 640) {
       navRef.current.classList.remove("nav-pc");
       navRef.current.classList.add("hidden");
@@ -28,20 +28,30 @@ const Navbar = ({ targRef }) => {
   }, [btn]);
 
   useEffect(() => {
+    if (isAnimating.current) return;
+
     const antes = anteriorRef.current;
     const proximo = targRef.current[ativo];
 
     if (!antes) {
+      isAnimating.current = true;
       anteriorRef.current = targRef.current["inicio"];
       Object.values(targRef.current).forEach((el) => {
         if (el && el !== targRef.current["inicio"]) {
-          gsap.set(el, { display: "none", opacity: 0 });
+          gsap.set(el, {
+            display: "none",
+            opacity: 0,
+            onComplete: () => {
+              isAnimating.current = false;
+            },
+          });
         }
       });
       return;
     }
 
     if (antes && ativo && antes !== proximo) {
+      isAnimating.current = true;
       gsap.set(antes, {
         position: "absolute",
         top: 0,
@@ -52,7 +62,7 @@ const Navbar = ({ targRef }) => {
         left: 0,
         x: "-100%",
         opacity: 0,
-        duration: 1,
+        duration: 0.6,
         ease: "power3.out",
         onComplete: () => {
           gsap.set(antes, { display: "none", x: 0, position: "static" });
@@ -65,8 +75,11 @@ const Navbar = ({ targRef }) => {
         {
           x: 0,
           opacity: 1,
-          duration: 1,
+          duration: 0.6,
           ease: "power3.out",
+          onComplete: () => {
+            isAnimating.current = false;
+          },
         }
       );
     }
@@ -85,7 +98,9 @@ const Navbar = ({ targRef }) => {
              w-8 h-8 rounded-xl
              bg-white text-black text-xl 
              shadow-md hover:bg-gray-100 transition-all duration-300"
-        onClick={() => setBtn((prev) => !prev)}
+        onClick={() => {
+          setBtn((prev) => !prev);
+        }}
       >
         {!btn ? "☰" : "X"}
       </button>
@@ -98,9 +113,12 @@ const Navbar = ({ targRef }) => {
                id === ativo ? "bg-black text-white" : ""
              }`}
             onClick={() => {
-              setAtivo(id);
-              if (window.innerWidth < 640) {
-                setBtn(false);
+              {
+                if (isAnimating.current) return;
+                setAtivo(id);
+                if (window.innerWidth < 640) {
+                  setBtn(false);
+                }
               }
             }}
           >

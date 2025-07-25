@@ -14,9 +14,13 @@ const Inicio = ({ forRef }) => {
   const divSobre = useRef();
   const divServico = useRef();
   const [atualRef, setAtualRef] = useState(false);
+  const isAnimating = useRef(false);
 
   useEffect(() => {
+    if (isAnimating.current) return;
+
     if (atualRef === divServico) {
+      isAnimating.current = true;
       gsap.to(divSobre.current, {
         x: "-100%",
         opacity: 0,
@@ -26,10 +30,19 @@ const Inicio = ({ forRef }) => {
       gsap.fromTo(
         divServico.current,
         { x: "100%", opacity: 0 },
-        { x: "0%", opacity: 1, duration: 0.6, ease: "power2.inOut" }
+        {
+          x: "0%",
+          opacity: 1,
+          duration: 0.6,
+          ease: "power2.inOut",
+          onComplete: () => {
+            isAnimating.current = false;
+          },
+        }
       );
     }
     if (atualRef === divSobre) {
+      isAnimating.current = true;
       gsap.to(divServico.current, {
         x: "100%",
         opacity: 0,
@@ -39,7 +52,15 @@ const Inicio = ({ forRef }) => {
       gsap.fromTo(
         divSobre.current,
         { x: "-100%", opacity: 0 },
-        { x: "0%", opacity: 1, duration: 0.6, ease: "power2.inOut" }
+        {
+          x: "0%",
+          opacity: 1,
+          duration: 0.6,
+          ease: "power2.inOut",
+          onComplete: () => {
+            isAnimating.current = false;
+          },
+        }
       );
     }
   }, [atualRef]);
@@ -74,11 +95,12 @@ const Inicio = ({ forRef }) => {
           </button>
           <button
             aria-label="Mostrar próximo conteúdo"
-            onClick={() =>
+            onClick={() => {
+              if (isAnimating.current) return;
               atualRef === divSobre
                 ? setAtualRef(divServico)
-                : setAtualRef(divSobre)
-            }
+                : setAtualRef(divSobre);
+            }}
             className="bg-gray-200 p-2 z-20
           absolute top-1/2 -translate-y-1/2 right-3 sm:right-10  rounded-full  cursor-pointer
           hover:scale-110 hover:bg-gray-300 hover:shadow transition-all"
@@ -93,7 +115,7 @@ const Inicio = ({ forRef }) => {
           <div
             ref={divServico}
             className=" flex flex-col absolute top-0 left-0 w-full h-full 
-            overflow-hidden items-left px-5 sm:px-40 justify-between sm:justify-center z-10"
+            overflow-hidden items-left py-10 px-5 sm:px-40 justify-between sm:justify-center z-10"
           >
             <img
               src={fundoImgIn1}
@@ -155,7 +177,7 @@ const Inicio = ({ forRef }) => {
         </div>
       </div>
       <div
-        className="flex py-5 sm:py-15 px-5 sm:px-20 w-full h-[110vh] sm:h-[80vh]
+        className="flex py-5 sm:py-15 px-5 sm:px-20 w-full  sm:h-[70vh]
        flex-col items-center justify-between"
       >
         <div className="flex w-[320px] sm:w-[630px] text-xl sm:text-2xl rubik-mr font-bold text-justify">
@@ -167,9 +189,9 @@ const Inicio = ({ forRef }) => {
         </div>
         <div
           className="flex relative flex-col sm:flex-row w-full libertinus-mono-regular
-          px-10 sm:px-30 text-xl items-center justify-between bottom-10 sm:mt-0"
+          px-10 sm:px-30 text-xl items-center justify-between bottom-10 mt-25 sm:mt-0"
         >
-          <div className="flex text-lg sm:text-xl flex-col items-center p-3 sm:p-5 gap-2 sm:gap-5">
+          <div className="flex text-lg sm:text-xl flex-col items-center p-3 sm:p-5 gap-3 sm:gap-5">
             <img
               src={pontoImg}
               className="w-[60px] h-[60px]"

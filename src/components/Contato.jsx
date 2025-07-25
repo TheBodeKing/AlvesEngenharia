@@ -46,16 +46,11 @@ const Contato = ({ forRef }) => {
       }}
     >
       <div className="sm:py-15 py-5 px-5 w-full items-center justify-between flex flex-col">
-        <h2
-          className="text-2xl sm:text-5xl text-center mb-10"
-          onClick={() => {
-            console.log(publicKey);
-          }}
-        >
+        <h2 className="text-2xl sm:text-5xl text-center mb-15 roboto-grosso">
           Entre em Contato
         </h2>
         <div
-          className="flex flex-col sm:flex-row relative w-full sm:w-[60%] 
+          className="flex flex-col sm:flex-row roboto-fino relative w-full sm:w-[60%] 
          items-center justify-between "
         >
           <div className="flex flex-1 flex-col w-full items-start sm:items-end justify-center">
@@ -79,8 +74,8 @@ const Contato = ({ forRef }) => {
               onChange={(e) => setName(e.target.value)}
               required
               placeholder="Nome *"
-              className="p-2 border border-gray-200 focus:outline-none
-               focus:ring-2 focus:ring-gray-300"
+              className="p-2 border border-gray-400 focus:outline-none
+               focus:ring-2 focus:ring-gray-500"
             />
 
             <input
@@ -91,8 +86,8 @@ const Contato = ({ forRef }) => {
               placeholder="Email *"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="p-2 border border-gray-200 focus:outline-none
-               focus:ring-2 focus:ring-gray-300"
+              className="p-2 border border-gray-400 focus:outline-none
+               focus:ring-2 focus:ring-gray-500"
             />
 
             <input
@@ -102,8 +97,8 @@ const Contato = ({ forRef }) => {
               placeholder="Telefone"
               value={number}
               onChange={(e) => setNumber(e.target.value)}
-              className="p-2 border border-gray-200 focus:outline-none
-               focus:ring-2 focus:ring-gray-300"
+              className="p-2 border border-gray-400 focus:outline-none
+               focus:ring-2 focus:ring-gray-500"
             />
 
             <textarea
@@ -114,17 +109,17 @@ const Contato = ({ forRef }) => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Mensagem *"
-              className="p-2 border border-gray-200 resize-none 
-              focus:outline-none focus:ring-2 focus:ring-gray-300"
+              className="p-2 border border-gray-400 resize-none 
+              focus:outline-none focus:ring-2 focus:ring-gray-500"
             ></textarea>
 
             <button
               type="submit"
               className="self-center bg-black text-white p-1
                hover:text-black border border-black rounded hover:bg-white 
-               transition-all hover:scale-110 cursor-pointer"
+               transition-all hover:scale-110 cursor-pointer duration-75"
             >
-              Enviar
+              ENVIAR
             </button>
           </form>
         </div>

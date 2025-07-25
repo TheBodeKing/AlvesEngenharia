@@ -10,16 +10,16 @@ const Servicos = ({ forRef }) => {
   return (
     <section
       id="servico"
-      className="w-full h-full sm:h-[150vh]"
+      className="w-full min-h-screen"
       ref={(el) => {
         forRef.current["servico"] = el;
       }}
     >
       <div className="flex flex-col items-center justify-between p-5 sm:p-15">
-        <h1 className="text-2xl sm:text-5xl roboto-grosso">
+        <h1 className="text-4xl sm:text-5xl roboto-grosso">
           O melhor serviço da área
         </h1>
-        <h2 className="text-xl sm:text-3xl mt-5 rubik-mr">
+        <h2 className="text-2xl sm:text-3xl mt-5 rubik-mr">
           Veja de qual serviço você precisa
         </h2>
         <div
@@ -27,8 +27,12 @@ const Servicos = ({ forRef }) => {
         justify-between items-center"
         >
           <div className="flex flex-col sm:flex-row w-full justify-between items-center roboto-fino">
-            <div className="flex flex-col items-center justify-center p-5 sm:p-10 gap-3 ">
-              <img src={servico1Img} alt="Servico" height={40} width={50} />
+            <div className="flex flex-1 flex-col text-center items-center justify-center p-5 sm:p-10 gap-3 ">
+              <img
+                src={servico1Img}
+                alt="Servico"
+                className="h-[200px] w-[300px]"
+              />
               <h2 className="text-lg">Desenho de Projeto Elétrico</h2>
               <p className="text-sm">
                 Planejamento e projeto de sistemas elétricos completos para
@@ -36,8 +40,12 @@ const Servicos = ({ forRef }) => {
                 cálculos de carga e planejamento de segurança.
               </p>
             </div>
-            <div className="flex flex-col items-center justify-center p-5 sm:p-10 gap-3">
-              <img src={servico2Img} alt="Servico" height={40} width={50} />
+            <div className="flex flex-1 flex-col text-center items-center justify-center p-5 sm:p-10 gap-3">
+              <img
+                src={servico2Img}
+                alt="Servico"
+                className="h-[200px] w-[300px]"
+              />
               <h2 className="text-lg">Supervisão de Instalação</h2>
               <p className="text-sm">
                 Supervisionar a instalação de sistemas elétricos (fiação,
@@ -45,8 +53,12 @@ const Servicos = ({ forRef }) => {
                 qualidade.
               </p>
             </div>
-            <div className="flex flex-col items-center justify-center p-5 sm:p-10 gap-3">
-              <img src={servico3Img} alt="Servico" height={40} width={50} />
+            <div className="flex flex-1 flex-col text-center items-center justify-center p-5 sm:p-10 gap-3">
+              <img
+                src={servico3Img}
+                alt="Servico"
+                className="h-[200px] w-[300px]"
+              />
               <h2 className="text-lg">Projeto e montagem do painel</h2>
               <p className="text-sm">
                 Personalização de painéis de controle elétrico para máquinas,
@@ -55,8 +67,12 @@ const Servicos = ({ forRef }) => {
             </div>
           </div>
           <div className="sm:w-[66%] w-full flex flex-col sm:flex-row justify-between items-center">
-            <div className="flex flex-col items-center justify-center p-5 sm:p-10 gap-3 ">
-              <img src={servico4Img} alt="Servico" height={40} width={50} />
+            <div className="flex flex-col text-center items-center justify-center p-5 sm:p-10 gap-3 ">
+              <img
+                src={servico4Img}
+                alt="Servico"
+                className="h-[200px] w-[300px]"
+              />
               <h2 className="text-lg">
                 Distribuição de energia e análise de carga
               </h2>
@@ -65,8 +81,12 @@ const Servicos = ({ forRef }) => {
                 ou edifício para evitar sobrecargas e interrupções.
               </p>
             </div>
-            <div className="flex flex-col items-center justify-center p-5 sm:p-10 gap-3 ">
-              <img src={servico5Img} alt="Servico" height={40} width={50} />
+            <div className="flex flex-col text-center items-center justify-center p-5 sm:p-10 gap-3 ">
+              <img
+                src={servico5Img}
+                alt="Servico"
+                className="h-[200px] w-[300px]"
+              />
               <h2 className="text-lg">Manutenção e solução de problemas</h2>
               <p className="text-sm">
                 Diagnosticar e consertar problemas elétricos em ambientes
