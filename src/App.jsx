@@ -11,7 +11,7 @@ const App = () => {
   const appRef = useRef({});
 
   return (
-    <main className="bg-gray-100">
+    <main className="bg-blue-100">
       <Header />
       <Navbar targRef={appRef} />
       <div className="w-full h-auto relative overflow-hidden">
