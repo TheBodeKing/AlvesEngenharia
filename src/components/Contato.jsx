@@ -8,12 +8,17 @@ const Contato = ({ forRef }) => {
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const serviceId = "service_2ql7bo5";
     const templateId = "template_0zuz03c";
-    const publicKey = getEmailJsKey();
+    const publicKey = await getEmailJsKey();
+
+    if (!publicKey) {
+      alert("Erro ao obter chave de autenticação.");
+      return;
+    }
 
     const templateParams = {
       from_name: name,
