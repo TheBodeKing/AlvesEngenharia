@@ -8,18 +8,23 @@ const Contato = ({ forRef }) => {
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const serviceId = "service_t4wd918";
-    const templateId = "template_qc1oagq";
-    const publicKey = getEmailJsKey();
+    const serviceId = "service_2ql7bo5";
+    const templateId = "template_0zuz03c";
+    const publicKey = await getEmailJsKey();
+
+    if (!publicKey) {
+      alert("Erro ao obter chave de autenticação.");
+      return;
+    }
 
     const templateParams = {
       from_name: name,
       from_email: email,
       from_number: number,
-      to_name: "pompeu",
+      to_name: "Alexandre",
       message: message,
     };
 
@@ -33,6 +38,7 @@ const Contato = ({ forRef }) => {
         setNumber("");
       })
       .catch((error) => {
+        console.error(error);
         alert("Falha no envio!");
       });
   };
@@ -56,10 +62,10 @@ const Contato = ({ forRef }) => {
           <div className="flex flex-1 flex-col w-full items-start sm:items-end justify-center">
             <div className="sm:p-10 p-5 mb-5 sm:mb-10 ml-5">
               <h2 className="text-blue-500">Telefone</h2>
-              <p>213412421</p>
+              <p>(75) 99208-0378</p>
 
               <h2 className="mt-5 text-blue-500">Email</h2>
-              <p>alexandre@hotmail.com</p>
+              <p>eng.alexandrealves@hotmail.com</p>
             </div>
           </div>
           <form

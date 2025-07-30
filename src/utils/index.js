@@ -12,7 +12,7 @@ import servico2 from "/assets/images/gerente.jpg";
 import servico3 from "/assets/images/markus-spiske-kK7uPfb2YWU-unsplash.jpg";
 import servico4 from "/assets/images/xin-Q5hVR77WgZg-unsplash.jpg";
 import servico5 from "/assets/images/hobi-industri-NLBJ2I0lNr4-unsplash.jpg";
-import sobre from "/assets/images/pexels-pixabay-236089.jpg";
+import sobre from "/assets/images/image-from-rawpixel-id-6284500-png.png";
 
 export const logoImg = logo;
 export const fundoImgHd = fundoHd;
