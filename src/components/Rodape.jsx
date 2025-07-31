@@ -7,7 +7,7 @@ const Rodape = () => {
       >
         <div className="p-1 sm:p-2 text-center">
           <h2 className="text-xl sm:text-3xl">Nossos contatos</h2>
-          <p className="text-lg sm:text-xl mt-1 sm:mt-2">(75) 99208-0378</p>
+          <p className="text-lg sm:text-xl mt-1 sm:mt-2">(75) 99911-6033</p>
           <p className="text-sm sm:text-lg mt-1">
             eng.alexandrealves@hotmail.com
           </p>
