@@ -2,12 +2,20 @@ import { useEffect, useRef, useState } from "react";
 import { navLists } from "../constants";
 import { gsap } from "gsap";
 
-const Navbar = ({ targRef }) => {
+const Navbar = ({ targRef, btnInicioFor, btnInicioSet }) => {
   const [ativo, setAtivo] = useState("inicio");
   const anteriorRef = useRef(null);
   const [btn, setBtn] = useState(false);
   const navRef = useRef();
   const isAnimating = useRef(false);
+
+  useEffect(() => {
+    if (!btnInicioFor) return;
+
+    setAtivo(btnInicioFor);
+
+    btnInicioSet(false);
+  }, [btnInicioFor]);
 
   useEffect(() => {
     if (window.innerWidth < 640) {
@@ -69,19 +77,15 @@ const Navbar = ({ targRef }) => {
         },
       });
       gsap.set(proximo, { display: "block", x: "100%" });
-      gsap.to(
-        proximo,
-
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: "power3.out",
-          onComplete: () => {
-            isAnimating.current = false;
-          },
-        }
-      );
+      gsap.to(proximo, {
+        x: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: "power3.out",
+        onComplete: () => {
+          isAnimating.current = false;
+        },
+      });
     }
 
     if (ativo) {

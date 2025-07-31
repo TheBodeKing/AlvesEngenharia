@@ -10,16 +10,28 @@ import {
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 
-const Inicio = ({ forRef }) => {
+const Inicio = ({ forRef, btnInicioTarg }) => {
   const divSobre = useRef();
   const divServico = useRef();
   const [atualRef, setAtualRef] = useState(false);
   const isAnimating = useRef(false);
+  const [btnNav, setBtnNav] = useState(false);
 
+  const arrowHandler = () => {
+    if (isAnimating.current) return;
+    atualRef === "sobre" ? setAtualRef("servico") : setAtualRef("sobre");
+  };
   useEffect(() => {
     if (isAnimating.current) return;
 
-    if (atualRef === divServico) {
+    if (!atualRef) {
+      gsap.set(divSobre.current, {
+        x: "-100%",
+        opacity: 0,
+      });
+    }
+
+    if (atualRef === "servico") {
       isAnimating.current = true;
       gsap.to(divSobre.current, {
         x: "-100%",
@@ -41,7 +53,7 @@ const Inicio = ({ forRef }) => {
         }
       );
     }
-    if (atualRef === divSobre) {
+    if (atualRef === "sobre") {
       isAnimating.current = true;
       gsap.to(divServico.current, {
         x: "100%",
@@ -65,6 +77,14 @@ const Inicio = ({ forRef }) => {
     }
   }, [atualRef]);
 
+  useEffect(() => {
+    if (!btnNav) return;
+
+    btnInicioTarg(btnNav);
+
+    setBtnNav(false);
+  }, [btnNav]);
+
   return (
     <section
       id="inicio"
@@ -77,11 +97,7 @@ const Inicio = ({ forRef }) => {
         <div className="w-full relative min-h-screen justify-center flex">
           <button
             aria-label="Mostrar próximo conteúdo"
-            onClick={() =>
-              atualRef === divSobre
-                ? setAtualRef(divServico)
-                : setAtualRef(divSobre)
-            }
+            onClick={arrowHandler}
             className="bg-gray-200 p-2 z-20
           absolute top-1/2 -translate-y-1/2 left-3 sm:left-10 rounded-full cursor-pointer
           hover:scale-110 hover:bg-gray-300 hover:shadow transition-all"
@@ -95,12 +111,7 @@ const Inicio = ({ forRef }) => {
           </button>
           <button
             aria-label="Mostrar próximo conteúdo"
-            onClick={() => {
-              if (isAnimating.current) return;
-              atualRef === divSobre
-                ? setAtualRef(divServico)
-                : setAtualRef(divSobre);
-            }}
+            onClick={arrowHandler}
             className="bg-gray-200 p-2 z-20
           absolute top-1/2 -translate-y-1/2 right-3 sm:right-10  rounded-full  cursor-pointer
           hover:scale-110 hover:bg-gray-300 hover:shadow transition-all"
@@ -115,7 +126,7 @@ const Inicio = ({ forRef }) => {
           <div
             ref={divServico}
             className=" flex flex-col absolute top-0 left-0 w-full h-full
-            overflow-hidden items-left py-5 sm:py-100 px-5 sm:px-40 justify-between sm:justify-center z-10"
+            overflow-hidden items-left py-0 sm:py-80 px-5 sm:px-40 justify-between sm:justify-center z-10"
           >
             <img
               src={fundoImgIn1}
@@ -123,7 +134,7 @@ const Inicio = ({ forRef }) => {
               className="absolute top-0 left-0 w-full h-full object-cover z-0"
             />
             <div className="inset-0 absolute bg-blue-200/70" />
-            <h2 className="font-bold text-4xl sm:text-6xl relative mt-10 ml-5 sm:ml-10 sm:mb-20 roboto-grosso">
+            <h2 className="font-bold text-4xl sm:text-6xl relative mt-10 ml-5 py-5 sm:ml-10 sm:mb-20 roboto-grosso">
               Serviços
             </h2>
             <p className="rubik-mr relative w-[280px] sm:w-[620px] ml-11 bottom-10 sm:ml-15 text-xl sm:text-3xl text-justify">
@@ -133,19 +144,22 @@ const Inicio = ({ forRef }) => {
               as normas de segurança e qualidade. Manutenção, diagnóstico e
               solução de problemas envolvendo sistemas elétricos.
             </p>
-            <a
+            <button
               className="rounded-full relative w-fit px-4 py-2 ml-5 bottom-10 sm:ml-10 mb-10 sm:mt-25
                bg-black text-white text-xl rubik-mr
             hover:text-black hover:bg-white transition-all z-20 
             cursor-pointer hover:scale-110"
+              onClick={() => {
+                setBtnNav("servico");
+              }}
             >
               Veja os nossos serviços
-            </a>
+            </button>
           </div>
           <div
             ref={divSobre}
             className="flex flex-col absolute top-0 left-0
-             w-full h-full overflow-hidden items-left py-5 sm:py-100 px-10 sm:px-40 
+             w-full h-full overflow-hidden items-left py-5 sm:py-80 px-10 sm:px-40 
              justify-center z-10 opacity-0 "
           >
             <img
@@ -166,13 +180,16 @@ const Inicio = ({ forRef }) => {
               <li>Compromissado, confiável, transparente e detalhista</li>
               <li>Disponibilidade para viajar e consultorias remotas</li>
             </ul>
-            <a
+            <button
               className="rounded-full relative w-fit px-4 py-2 ml-5 sm:ml-25 
               mt-10 sm:mt-20 bg-black text-white text-xl rubik-mr
             hover:text-black hover:bg-white transition-all z-20 cursor-pointer hover:scale-110"
+              onClick={() => {
+                setBtnNav("sobre");
+              }}
             >
               Veja mais sobre nós
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -189,7 +206,7 @@ const Inicio = ({ forRef }) => {
         </div>
         <div
           className="flex relative flex-col sm:flex-row w-full rubik-mr
-          px-10 sm:px-30 text-xl items-center justify-between bottom-10 mt-25 sm:mt-0"
+          px-10 sm:px-30 text-xl items-center justify-between bottom-10 mt-25 sm:mt-10"
         >
           <div className="flex text-lg sm:text-xl flex-col items-center p-3 sm:p-5 gap-3 sm:gap-5">
             <img

@@ -6,7 +6,7 @@ import setaR from "/assets/images/setaR.png";
 import setaL from "/assets/images/setaL.png";
 import estrela from "/assets/images/round-icons-uq_IHmkIUlA-unsplash.png";
 import ponto from "/assets/images/pin.png";
-import dinheiro from "/assets/images/dindin.jpg";
+import dinheiro from "/assets/images/moni.png";
 import servico1 from "/assets/images/soham-banerjee-SAFF_1rWBqE-unsplash.jpg";
 import servico2 from "/assets/images/manufacturing-supervisor-jobs.jpg";
 import servico3 from "/assets/images/markus-spiske-kK7uPfb2YWU-unsplash.jpg";
