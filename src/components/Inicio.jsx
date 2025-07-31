@@ -74,7 +74,7 @@ const Inicio = ({ forRef }) => {
       }}
     >
       <div className="w-full min-h-screen">
-        <div className="w-full relative min-h-screen justify-center  flex">
+        <div className="w-full relative min-h-screen justify-center flex">
           <button
             aria-label="Mostrar próximo conteúdo"
             onClick={() =>
@@ -114,8 +114,8 @@ const Inicio = ({ forRef }) => {
           </button>
           <div
             ref={divServico}
-            className=" flex flex-col absolute top-0 left-0 w-full h-full 
-            overflow-hidden items-left py-10 px-5 sm:px-40 justify-between sm:justify-center z-10"
+            className=" flex flex-col absolute top-0 left-0 w-full h-full
+            overflow-hidden items-left py-5 sm:py-100 px-5 sm:px-40 justify-between sm:justify-center z-10"
           >
             <img
               src={fundoImgIn1}
@@ -145,8 +145,8 @@ const Inicio = ({ forRef }) => {
           <div
             ref={divSobre}
             className="flex flex-col absolute top-0 left-0
-             w-full h-full overflow-hidden items-left px-10 sm:px-40 
-             justify-center z-10 opacity-0"
+             w-full h-full overflow-hidden items-left py-5 sm:py-100 px-10 sm:px-40 
+             justify-center z-10 opacity-0 "
           >
             <img
               src={fundoImgIn2}
@@ -161,7 +161,7 @@ const Inicio = ({ forRef }) => {
               className=" list-disc flex flex-col relative w-[280px] sm:w-[620px] ml-20 sm:ml-30 
             text-2xl sm:text-3xl text-justify rubik-mr gap-4"
             >
-              <li>10 anos de experiência na área</li>
+              <li>16 anos de experiência na área</li>
               <li>Licenciado e certificado, registrado no CREA</li>
               <li>Compromissado, confiável, transparente e detalhista</li>
               <li>Disponibilidade para viajar e consultorias remotas</li>
@@ -180,7 +180,7 @@ const Inicio = ({ forRef }) => {
         className="flex py-5 sm:py-15 px-5 sm:px-20 w-full  sm:h-[70vh]
        flex-col items-center justify-between"
       >
-        <div className="flex w-[320px] sm:w-[630px] text-xl sm:text-2xl rubik-mr font-bold text-justify">
+        <div className="flex w-[320px] sm:w-[630px] mt-10 text-xl sm:text-2xl rubik-mr font-bold text-justify">
           <h2>
             Dando vida a soluções elétricas inteligentes e confiáveis. Com foco
             em segurança, eficiência e inovação, oferecemos serviços de alta
@@ -188,7 +188,7 @@ const Inicio = ({ forRef }) => {
           </h2>
         </div>
         <div
-          className="flex relative flex-col sm:flex-row w-full libertinus-mono-regular
+          className="flex relative flex-col sm:flex-row w-full rubik-mr
           px-10 sm:px-30 text-xl items-center justify-between bottom-10 mt-25 sm:mt-0"
         >
           <div className="flex text-lg sm:text-xl flex-col items-center p-3 sm:p-5 gap-3 sm:gap-5">

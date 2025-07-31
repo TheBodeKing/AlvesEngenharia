@@ -21,17 +21,19 @@ const Sobre = ({ forRef }) => {
       }}
     >
       <div className="flex w-full flex-col items-center p-5 justify-center">
-        <h1 className="text-2xl mb-5 sm:text-5xl roboto-grosso">Sobre nós</h1>
+        <img
+          src={sobreImg}
+          alt="Sobre "
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        />
+        <div className="absolute inset-0 bg-blue-100/70 z-1" />
+        <h1 className=" mb-5 text-4xl sm:text-5xl roboto-grosso z-10">
+          Sobre nós
+        </h1>
         <div
           className="flex relative w-full sm:w-[60%] flex-col p-5 sm:p-20
          justify-between items-center sm:mt-0 mt-10 rubik-mr gap-8"
         >
-          <img
-            src={sobreImg}
-            alt="Sobre "
-            className="absolute top-0 left-0 w-full h-full object-cover z-0"
-          />
-          <div className="inset-0 absolute bg-white/50" />
           <p className="z-10">
             Apaixonados por precisão e movidos pela inovação, nossa missão é
             fornecer soluções elétricas de alta qualidade que atendam às

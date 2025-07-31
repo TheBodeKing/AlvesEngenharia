@@ -52,7 +52,7 @@ const Contato = ({ forRef }) => {
       }}
     >
       <div className="sm:py-15 py-5 px-5 w-full items-center justify-between flex flex-col">
-        <h2 className="text-2xl sm:text-5xl text-center mb-15 roboto-grosso">
+        <h2 className="text-4xl sm:text-5xl text-center mb-15 roboto-grosso">
           Entre em Contato
         </h2>
         <div
