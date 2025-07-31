@@ -62,7 +62,7 @@ const Contato = ({ forRef }) => {
           <div className="flex flex-1 flex-col w-full items-start sm:items-end justify-center">
             <div className="sm:p-10 p-5 mb-5 sm:mb-10 ml-5">
               <h2 className="text-blue-500">Telefone</h2>
-              <p>(75) 99208-0378</p>
+              <p>(75) 99911-6033</p>
 
               <h2 className="mt-5 text-blue-500">Email</h2>
               <p>eng.alexandrealves@hotmail.com</p>
