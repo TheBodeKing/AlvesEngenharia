@@ -15,21 +15,23 @@ const Inicio = ({ forRef, btnInicioTarg }) => {
   const divServico = useRef();
   const [atualRef, setAtualRef] = useState(false);
   const isAnimating = useRef(false);
-  const [btnNav, setBtnNav] = useState(false);
 
   const arrowHandler = () => {
     if (isAnimating.current) return;
     atualRef === "sobre" ? setAtualRef("servico") : setAtualRef("sobre");
   };
-  useEffect(() => {
-    if (isAnimating.current) return;
 
+  useEffect(() => {
     if (!atualRef) {
       gsap.set(divSobre.current, {
         x: "-100%",
         opacity: 0,
       });
     }
+  }, []);
+
+  useEffect(() => {
+    if (isAnimating.current) return;
 
     if (atualRef === "servico") {
       isAnimating.current = true;
@@ -76,14 +78,6 @@ const Inicio = ({ forRef, btnInicioTarg }) => {
       );
     }
   }, [atualRef]);
-
-  useEffect(() => {
-    if (!btnNav) return;
-
-    btnInicioTarg(btnNav);
-
-    setBtnNav(false);
-  }, [btnNav]);
 
   return (
     <section
@@ -150,7 +144,7 @@ const Inicio = ({ forRef, btnInicioTarg }) => {
             hover:text-black hover:bg-white transition-all z-20 
             cursor-pointer hover:scale-110"
               onClick={() => {
-                setBtnNav("servico");
+                btnInicioTarg("servico");
               }}
             >
               Veja os nossos serviços
@@ -185,7 +179,7 @@ const Inicio = ({ forRef, btnInicioTarg }) => {
               mt-10 sm:mt-20 bg-black text-white text-xl rubik-mr
             hover:text-black hover:bg-white transition-all z-20 cursor-pointer hover:scale-110"
               onClick={() => {
-                setBtnNav("sobre");
+                btnInicioTarg("sobre");
               }}
             >
               Veja mais sobre nós

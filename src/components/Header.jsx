@@ -16,7 +16,7 @@ const Header = () => {
         <img
           src={logoImg}
           alt="Logotipo da Alves Engenharia"
-          className="w-[100px] h-[100px] relative
+          className="w-[100px] h-[100px]
            logo-especial sm:w-[150px] sm:h-[150px] "
         />
         <div className="flex flex-col items-center mt-5 mx-5">

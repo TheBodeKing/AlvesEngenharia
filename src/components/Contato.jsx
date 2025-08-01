@@ -1,15 +1,18 @@
 import { getEmailJsKey } from "../utils/config";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { emailImg, zapImg } from "../utils";
 
 const Contato = ({ forRef }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSending(true);
 
     const serviceId = "service_2ql7bo5";
     const templateId = "template_0zuz03c";
@@ -41,6 +44,8 @@ const Contato = ({ forRef }) => {
         console.error(error);
         alert("Falha no envio!");
       });
+
+    setIsSending(false);
   };
 
   return (
@@ -56,22 +61,52 @@ const Contato = ({ forRef }) => {
           Entre em Contato
         </h2>
         <div
-          className="flex flex-col sm:flex-row roboto-fino relative w-full sm:w-[60%] 
+          className="flex flex-col sm:flex-row roboto-fino relative w-full sm:w-[65%] 
          items-center justify-between "
         >
-          <div className="flex flex-1 flex-col w-full items-start sm:items-end justify-center">
-            <div className="sm:p-10 p-5 mb-5 sm:mb-10 ml-5">
-              <h2 className="text-blue-500">Telefone</h2>
-              <p>(75) 99911-6033</p>
+          <div
+            className="flex flex-1 flex-col w-full items-start justify-center
+          sm:p-10 p-5 mb-5 sm:mb-10 mx-5 text-xl"
+          >
+            <h2 className="text-blue-500">Telefone</h2>
+            <a
+              href="https://wa.me/557599116033"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2"
+            >
+              <img
+                src={zapImg}
+                alt="Whatsapp"
+                className="w-[35px] h-[35px] group-hover:scale-130 
+                  hover:cursor-pointer shadow-[0_4px_4px_rgba(0,0,0,0.6)] rounded-full transition-all"
+              />{" "}
+              (75) 99911-6033
+            </a>
 
-              <h2 className="mt-5 text-blue-500">Email</h2>
-              <p>eng.alexandrealves@hotmail.com</p>
-            </div>
+            <h2 className="mt-5 text-blue-500">Email</h2>
+            <a
+              href="mailto:eng.alexandrealves@hotmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2"
+            >
+              <img
+                src={emailImg}
+                alt="Outlook"
+                className="w-[35px] h-[35px] group-hover:scale-130 
+                  hover:cursor-pointer shadow-[0_4px_4px_rgba(0,0,0,0.6)] rounded-full transition-all"
+              />{" "}
+              eng.alexandrealves@hotmail.com
+            </a>
           </div>
           <form
             className="max-w-xl mx-auto flex flex-[2] flex-col gap-2 text-sm w-full"
             onSubmit={handleSubmit}
           >
+            <label htmlFor="nome" className="sr-only">
+              Nome
+            </label>
             <input
               type="text"
               id="nome"
@@ -83,7 +118,9 @@ const Contato = ({ forRef }) => {
               className="p-2 border border-gray-400 focus:outline-none
                focus:ring-2 focus:ring-gray-500"
             />
-
+            <label htmlFor="email" className="sr-only">
+              Email
+            </label>
             <input
               type="email"
               id="email"
@@ -95,7 +132,9 @@ const Contato = ({ forRef }) => {
               className="p-2 border border-gray-400 focus:outline-none
                focus:ring-2 focus:ring-gray-500"
             />
-
+            <label htmlFor="telefone" className="sr-only">
+              Telefone
+            </label>
             <input
               type="tel"
               id="telefone"
@@ -106,7 +145,9 @@ const Contato = ({ forRef }) => {
               className="p-2 border border-gray-400 focus:outline-none
                focus:ring-2 focus:ring-gray-500"
             />
-
+            <label htmlFor="menssagem" className="sr-only">
+              Menssagem
+            </label>
             <textarea
               id="mensagem"
               name="mensagem"
@@ -120,12 +161,13 @@ const Contato = ({ forRef }) => {
             ></textarea>
 
             <button
+              disabled={isSending}
               type="submit"
               className="self-center bg-black text-white p-1
                hover:text-black border border-black rounded hover:bg-white 
                transition-all hover:scale-110 cursor-pointer duration-75"
             >
-              ENVIAR
+              {isSending ? "ENVIANDO..." : "ENVIAR"}
             </button>
           </form>
         </div>

@@ -117,12 +117,10 @@ const Navbar = ({ targRef, btnInicioFor, btnInicioSet }) => {
                id === ativo ? "bg-black text-white" : ""
              }`}
             onClick={() => {
-              {
-                if (isAnimating.current) return;
-                setAtivo(id);
-                if (window.innerWidth < 640) {
-                  setBtn(false);
-                }
+              if (isAnimating.current) return;
+              setAtivo(id);
+              if (window.innerWidth < 640) {
+                setBtn(false);
               }
             }}
           >

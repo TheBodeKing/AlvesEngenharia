@@ -16,9 +16,9 @@ const Servicos = ({ forRef }) => {
       }}
     >
       <div className="flex flex-col items-center justify-between p-5 sm:p-15">
-        <h1 className="text-4xl sm:text-5xl roboto-grosso">
+        <h2 className="text-4xl sm:text-5xl roboto-grosso">
           O melhor serviço da área
-        </h1>
+        </h2>
         <h2 className="text-2xl sm:text-3xl mt-5 rubik-mr">
           Veja de qual serviço você precisa
         </h2>

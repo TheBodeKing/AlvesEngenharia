@@ -13,6 +13,8 @@ import servico3 from "/assets/images/markus-spiske-kK7uPfb2YWU-unsplash.jpg";
 import servico4 from "/assets/images/xin-Q5hVR77WgZg-unsplash.jpg";
 import servico5 from "/assets/images/hobi-industri-NLBJ2I0lNr4-unsplash.jpg";
 import sobre from "/assets/images/image-from-rawpixel-id-6284500-png.png";
+import zap from "/assets/images/zapLogo.png";
+import email from "/assets/images/outlook_14099.png";
 
 export const logoImg = logo;
 export const fundoImgHd = fundoHd;
@@ -29,3 +31,5 @@ export const servico3Img = servico3;
 export const servico4Img = servico4;
 export const servico5Img = servico5;
 export const sobreImg = sobre;
+export const zapImg = zap;
+export const emailImg = email;
