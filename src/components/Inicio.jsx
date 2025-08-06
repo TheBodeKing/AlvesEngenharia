@@ -93,8 +93,8 @@ const Inicio = ({ forRef, btnInicioTarg }) => {
         forRef.current["inicio"] = el;
       }}
     >
-      <div className="w-full min-h-screen border border-black">
-        <div className="w-full relative min-h-screen justify-center flex">
+      <div className="w-full min-h-fit">
+        <div className="w-full relative min-h-fit justify-center flex">
           <button
             aria-label="Mostrar próximo conteúdo"
             onClick={arrowHandler}
@@ -125,8 +125,8 @@ const Inicio = ({ forRef, btnInicioTarg }) => {
           </button>
           <div
             ref={divServico}
-            className=" flex flex-col absolute top-0 left-0 h-fit
-            overflow-hidden items-left py-15 px-15 sm:py-60 sm:px-40 justify-between sm:justify-center z-10"
+            className=" flex flex-col absolute top-0 left-0 min-h-screen
+            overflow-hidden items-left py-15 px-15 sm:py-5 sm:px-40 justify-between sm:justify-center z-10"
           >
             <img
               src={fundoImgIn1}
@@ -136,13 +136,13 @@ const Inicio = ({ forRef, btnInicioTarg }) => {
             <div className="inset-0 absolute bg-blue-200/70" />
             <h2
               className="font-bold text-4xl sm:text-6xl p-5
-            relative sm:ml-10 sm:mb-20 roboto-grosso"
+            relative sm:ml-5 sm:mb-10 roboto-grosso"
             >
               Serviços
             </h2>
             <p
               className="rubik-mr relative max-w-[95%] ml-3
-              sm:ml-15 text-xl sm:text-3xl sm:text-justify"
+              sm:ml-20 text-xl sm:text-3xl sm:text-justify"
             >
               Prestamos serviços de instalação, planejamento e desenvolvimento
               de sistemas elétricos de prédios, casas, fábricas e variados tipos
@@ -159,13 +159,13 @@ const Inicio = ({ forRef, btnInicioTarg }) => {
                 setBtnNav("servico");
               }}
             >
-              Veja os nossos serviços
+              Veja nossos serviços
             </button>
           </div>
           <div
             ref={divSobre}
-            className="flex flex-col absolute top-0 left-0 py-15 px-15
-             w-full overflow-hidden items-left sm:py-80 sm:px-40 
+            className="flex flex-col absolute top-0 left-0 py-15 px-15 min-h-screen
+             w-full overflow-hidden items-left sm:py-5 sm:px-40 
              justify-center z-10 opacity-0 "
           >
             <img
@@ -174,7 +174,36 @@ const Inicio = ({ forRef, btnInicioTarg }) => {
               className="absolute top-0 left-0 w-full h-full object-cover z-0"
             />
             <div className="inset-0 absolute bg-blue-200/70" />
-            <h2 className="text-5xl sm:text-6xl relative p-5 sm:mb-15 roboto-grosso ">
+            <h2 className="text-5xl sm:text-6xl relative p-5 sm:mb-10 roboto-grosso ">
+              Sobre
+            </h2>
+            <ul
+              className="list-disc flex flex-col relative max-w-[85%] w-[620px] ml-5 sm:ml-20 
+            text-2xl sm:text-3xl rubik-mr gap-4"
+            >
+              <li>16 anos de experiência na área</li>
+              <li>Licenciado e certificado, registrado no CREA</li>
+              <li>Compromissado, confiável, transparente e detalhista</li>
+              <li>Disponibilidade para viajar e consultorias remotas</li>
+            </ul>
+            <button
+              className="rounded-full relative w-fit px-4 py-2 mt-10 sm:ml-0 
+              sm:mt-10 bg-black text-white text-xl rubik-mr
+            hover:text-black hover:bg-white transition-all z-20 cursor-pointer hover:scale-110"
+              onClick={() => {
+                setBtnNav("sobre");
+              }}
+            >
+              Veja mais sobre nós
+            </button>
+          </div>
+          {/*inicio da copia */}
+          <div
+            className="flex flex-col reltive top-0 left-0 py-15 px-15 min-h-screen
+             w-full overflow-hidden items-left sm:py-5 sm:px-40 
+             justify-center z-10 opacity-0 "
+          >
+            <h2 className="text-5xl sm:text-6xl relative p-5 sm:mb-10 roboto-grosso ">
               Sobre
             </h2>
             <ul
@@ -188,19 +217,17 @@ const Inicio = ({ forRef, btnInicioTarg }) => {
             </ul>
             <button
               className="rounded-full relative w-fit px-4 py-2 mt-10 sm:ml-25 
-              sm:mt-20 bg-black text-white text-xl rubik-mr
-            hover:text-black hover:bg-white transition-all z-20 cursor-pointer hover:scale-110"
-              onClick={() => {
-                setBtnNav("sobre");
-              }}
+              sm:mt-10  text-xl rubik-mr
+             z-0"
             >
               Veja mais sobre nós
             </button>
           </div>
+          {/*fim da copia */}
         </div>
       </div>
       <div
-        className="flex py-5 sm:py-15 px-5 sm:px-20 w-full  sm:h-[70vh]
+        className="flex py-5 sm:py-15 px-5 sm:px-20 w-full min-h-fit
        flex-col items-center justify-between"
       >
         <div className="flex w-[320px] sm:w-[630px] mt-10 text-xl sm:text-2xl rubik-mr font-bold text-justify">
