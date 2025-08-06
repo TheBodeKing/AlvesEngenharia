@@ -10,7 +10,7 @@ const Header = () => {
       />
       <div className="absolute inset-0 bg-white/60" />
       <div
-        className="flex flex-col sm:flex-row w-full py-5 px-5
+        className="flex flex-col sm:flex-row w-full py-5 px-2
        items-center justify-center relative z-10"
       >
         <img
