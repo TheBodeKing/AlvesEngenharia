@@ -6,6 +6,7 @@ import Sobre from "./components/Sobre";
 import Contato from "./components/Contato";
 import { useRef, useState } from "react";
 import Rodape from "./components/Rodape";
+import Zap from "./components/Zap";
 
 const App = () => {
   const appRef = useRef({});
@@ -29,6 +30,8 @@ const App = () => {
         <Contato forRef={appRef} />
       </div>
       <Rodape />
+
+      <Zap />
     </main>
   );
 };

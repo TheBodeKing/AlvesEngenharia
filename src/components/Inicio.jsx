@@ -195,7 +195,7 @@ const Inicio = ({ forRef, btnInicioTarg }) => {
           <div
             className="flex flex-col reltive top-0 left-0 py-15 px-15 min-h-screen
              w-full overflow-hidden items-left sm:py-5 sm:px-40 
-             justify-center z-10 opacity-0 "
+             justify-center z-0 opacity-0 "
           >
             <h2 className="text-5xl sm:text-6xl relative p-5 sm:mb-10 roboto-grosso ">
               Sobre

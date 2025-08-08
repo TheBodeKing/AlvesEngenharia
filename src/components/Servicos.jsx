@@ -15,7 +15,7 @@ const Servicos = ({ forRef }) => {
         forRef.current["servico"] = el;
       }}
     >
-      <div className="flex flex-col items-center justify-between p-5 sm:p-15">
+      <div className="flex flex-col items-center justify-between p-5 sm:px-10 sm:py-15">
         <h2 className="text-4xl sm:text-5xl roboto-grosso">
           O melhor serviço da área
         </h2>
@@ -33,8 +33,8 @@ const Servicos = ({ forRef }) => {
                 alt="Servico"
                 className="h-[200px] w-[300px]"
               />
-              <h2 className="text-lg">Desenho de Projeto Elétrico</h2>
-              <p className="text-sm">
+              <h2 className="text-xl">Desenho de Projeto Elétrico</h2>
+              <p className="text-lg">
                 Planejamento e projeto de sistemas elétricos completos para
                 edifícios, fábricas ou infraestrutura. Inclui diagramas,
                 cálculos de carga e planejamento de segurança.
@@ -46,8 +46,8 @@ const Servicos = ({ forRef }) => {
                 alt="Servico"
                 className="h-[200px] w-[300px]"
               />
-              <h2 className="text-lg">Supervisão de Instalação</h2>
-              <p className="text-sm">
+              <h2 className="text-xl">Supervisão de Instalação</h2>
+              <p className="text-lg">
                 Supervisionar a instalação de sistemas elétricos (fiação,
                 painéis, iluminação, etc.) para garantir conformidade e
                 qualidade.
@@ -59,8 +59,8 @@ const Servicos = ({ forRef }) => {
                 alt="Servico"
                 className="h-[200px] w-[300px]"
               />
-              <h2 className="text-lg">Projeto e montagem do painel</h2>
-              <p className="text-sm">
+              <h2 className="text-xl">Projeto e montagem do painel</h2>
+              <p className="text-lg">
                 Personalização de painéis de controle elétrico para máquinas,
                 sistemas industriais ou edifícios.
               </p>
@@ -73,10 +73,10 @@ const Servicos = ({ forRef }) => {
                 alt="Servico"
                 className="h-[200px] w-[300px]"
               />
-              <h2 className="text-lg">
+              <h2 className="text-xl">
                 Distribuição de energia e análise de carga
               </h2>
-              <p className="text-sm">
+              <p className="text-lg">
                 Projetar e otimizar a distribuição de eletricidade em um local
                 ou edifício para evitar sobrecargas e interrupções.
               </p>
@@ -87,8 +87,8 @@ const Servicos = ({ forRef }) => {
                 alt="Servico"
                 className="h-[200px] w-[300px]"
               />
-              <h2 className="text-lg">Manutenção e solução de problemas</h2>
-              <p className="text-sm">
+              <h2 className="text-xl">Manutenção e solução de problemas</h2>
+              <p className="text-lg">
                 Diagnosticar e consertar problemas elétricos em ambientes
                 residenciais, comerciais ou industriais. Manutenção preventiva
                 de sistemas e equipamentos.

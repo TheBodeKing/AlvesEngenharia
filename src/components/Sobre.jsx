@@ -15,12 +15,12 @@ const Sobre = ({ forRef }) => {
           alt=""
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
-        <div className="absolute inset-0 bg-blue-100/70 z-1" />
+        <div className="absolute inset-0 bg-blue-100/90 z-1" />
         <h2 className=" mb-5 text-4xl sm:text-5xl roboto-grosso z-10">
           Sobre nós
         </h2>
         <div
-          className="flex relative w-full sm:w-[60%] flex-col p-5 sm:p-20
+          className="flex text-xl relative w-full sm:w-[60%] flex-col p-5 sm:p-20
          justify-between items-center sm:mt-0 mt-10 rubik-mr gap-8 z-10"
         >
           <p>
